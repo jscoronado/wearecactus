@@ -1,47 +1,22 @@
-/*!
-Theme Name: wearecactus
-Theme URI: http://underscores.me/
-Author: Jose M. Coronado
-Author URI: http://underscores.me/
-Description: Prueba técnica para We Are Cactus
-Version: 1.0.0
-Tested up to: 5.4
-Requires PHP: 5.6
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: wearecactus
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-wearecactus is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
-
 /*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
+>>> TABLE OF CONTENTS: We Are Cactus
 ----------------------------------------------------------------
-# Generic
-	- Normalize
-	- Box sizing
-# Base
+# Site settings
 	- Typography
-	- Elements
-	- Links
-	- Forms
-## Layouts
+	- Colors
+	- Grid
+# Bootstrap 5
+# Base
+# Layouts
+	- Header
+	- Nav
+	- Footer
+	- Main
 # Components
+	- Posts
 	- Navigation
-	- Posts and pages
-	- Comments
-	- Widgets
-	- Media
-	- Captions
-	- Galleries
+	- Buttons
+	- Icons
 # plugins
 	- Jetpack infinite scroll
 # Utilities
@@ -50,53 +25,28 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 --------------------------------------------------------------*/
 
-// Import variables and mixins.
-@import "abstracts/abstracts";
-
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
-
-/* Normalize
+/* Site settings
 --------------------------------------------- */
-@import "generic/normalize";
+@import "base/site-settings";
 
-/* Box sizing
+/* Bootstrap 5
 --------------------------------------------- */
-@import "generic/box-sizing";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-/*--------------------------------------------------------------
-# Base
---------------------------------------------------------------*/
+/* Base
+--------------------------------------------- */
 @import "base/base";
 
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
-// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
-
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
-@import "components/components";
-
-/*--------------------------------------------------------------
-# Plugins
---------------------------------------------------------------*/
-
-/* Jetpack infinite scroll
+/* Layout
 --------------------------------------------- */
-@import "plugins/jetpack/infinite-scroll";
+@import "layout/header";
+@import "layout/nav";
+@import "layout/footer";
+@import "layout/main";
 
-/*--------------------------------------------------------------
-# Utilities
---------------------------------------------------------------*/
-
-/* Accessibility
+/* Components
 --------------------------------------------- */
-@import "utilities/accessibility";
-
-/* Alignments
---------------------------------------------- */
-@import "utilities/alignments";
+@import "components/post";
+@import "components/pagination";
+@import "components/btn";
+@import "components/icons";

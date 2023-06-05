@@ -1,20 +1,11 @@
-/* Typography
---------------------------------------------- */
-@import "typography/typography";
+/* ===========================
+   Base
+   =========================== */
 
-/* Elements
---------------------------------------------- */
-@import "elements/body";
-@import "elements/hr";
-@import "elements/lists";
-@import "elements/media";
-@import "elements/tables";
+* {box-sizing: border-box}
 
-/* Links
---------------------------------------------- */
-@import "elements/links";
+body {
+}
 
-/* Forms
---------------------------------------------- */
-@import "elements/buttons";
-@import "elements/fields";
+a {
+}
