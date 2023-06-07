@@ -57,6 +57,24 @@ $current_page = max( 1, get_query_var( 'paged' ) );
 										</p>
 									</div>
                                     <?php endif; ?>
+
+                                    <?php 
+                                        /* Get categories Perro */
+                                        $terms = get_the_terms($post->ID, 'raza');
+                                    ?>
+
+                                    <div class="item-perro__attributes">
+                                        <ul>
+                                            <?php 
+                                            foreach ($terms as $term):
+                                                echo '<li class="at-raza"><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
+                                            endforeach;
+                                            ?>
+                                            <?php if('edad_perro'): ?> <li class="at-years"><?php echo get_field('edad_perro')?></li><?php endif; ?>
+                                            <?php if('personalidad_perro'): ?><li class="at-personality"><?php echo get_field('personalidad_perro')?></li><?php endif; ?>
+                                        </ul>
+
+                                    </div>
 									<a href="<?php the_permalink(); ?>" class="button-link">Ver ficha técnica</a>
 								</div>
 							</article>
