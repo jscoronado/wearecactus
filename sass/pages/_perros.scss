@@ -59,6 +59,9 @@ article.item-perro {
 
                a {
                   color: white;
+                  @include tablet {
+                     font-size: 18px;
+                  }
                }
 
                &:hover {
@@ -69,6 +72,12 @@ article.item-perro {
                   }
                }
             }
+
+            
+            @include tablet {
+               font-size: 18px;
+            }
+            
         }
       }
   }
@@ -86,6 +95,10 @@ article.item-perro {
       &:hover {
          background-color: $grey;
          transition: all .3s ease;
+      }
+
+      @include tablet {
+         font-size: 18px;
       }
    }
 }
