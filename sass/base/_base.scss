@@ -28,6 +28,10 @@
       font-size: 3rem;
       font-weight: 600;
       color: $text;
+
+      span {
+         background-color: $yellow;
+      }
    }
 
    h2 {
