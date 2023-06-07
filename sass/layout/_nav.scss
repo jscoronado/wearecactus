@@ -36,6 +36,23 @@
       font-size: $font--size--calc;
       font-weight: 200;
       cursor: pointer;
+
+      @include tablet {
+         ul {
+            display: flex;
+            flex-direction: column;
+
+            .nav__list-item {
+               margin-bottom: 30px;
+
+               a {
+                  font-size: 40px;
+                  line-height: 50px;
+               }
+            }
+         }
+      }
+
    }
    &__list-item {
       position: relative;

@@ -28,5 +28,13 @@
          background-color: #B0AFAA;
          background-size: cover;
          background-position: center;
+
+         @include tablet {
+            background-position: 75%;
+            
+            h1, h2 {
+               color: #ffffff;
+            }
+        }
       }
   }
