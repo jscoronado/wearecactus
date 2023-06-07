@@ -1,19 +1,10 @@
 @charset "UTF-8";
 
-// ----------------------
-// == Site settings
-// ----------------------
+/* 
+	# Site settings
+/*--------------------------------------------------------------*/
 
 // Fonts
-@font-face {font-family: ''; font-weight: normal; font-style: normal;
-    src: url('/fonts/.otf');
-    src: url('/fonts/.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/.woff') format('woff'),
-         url('/fonts/.ttf') format('truetype'),
-         url('/fonts/.svg#SofiaProRegular') format('svg');
-}
-$regular: 'SofiaProRegular', Helvetica, Arial, sans-serif;
-
 $font-size-base:          14px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
@@ -28,14 +19,13 @@ $font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
 // = Colors
 // -----------------------------
 
-// Graphic chart
-$red: #df2e30;
-$blue: #1894c4;
-$facebook: #3b5998;
-$twitter: #43bfe1;
-
-$color1: $red;
-$color2: $blue;
+$yellow: #ffff00;
+$grey: #4d4d4d;
+$text:#212121;
+$white:#ffffff;
+$black:#000000;
+$background--color:#bfbfbf;
+//$background--color:#8f8f8f;
 
 
 // = Grid
@@ -43,3 +33,4 @@ $color2: $blue;
 
 // Max width wrapper
 $wrapper-width: pxtoem(1140, 16);
+$transition--length: .8;
