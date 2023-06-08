@@ -1,70 +1,52 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+# Prueba Técnica PHP - We Are Cactus
 
-_s
-===
+![Screenshot](https://github.com/jscoronado/wearecactus/assets/8921318/165bc45f-53f7-480b-a781-2a352b04d839)
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
-
-* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A custom header implementation in `inc/custom-header.php`. Just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/template-functions.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample layouts in `sass/layouts/` made using CSS Grid for a sidebar on either side of your content. Just uncomment the layout of your choice in `sass/style.scss`.
-Note: `.no-sidebar` styles are automatically loaded.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Full support for `WooCommerce plugin` integration with hooks in `inc/woocommerce.php`, styling override woocommerce.css with product gallery features (zoom, swipe, lightbox) enabled.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
-
-Installation
+## 📌 Descripción de proyecto
 ---------------
+La prueba técnica consistirá en generar un proyecto Wordpress limpio, siguiendo las directrices y consideraciones explicadas en las siguientes puntos. Se valorará la simplicidad y limpieza del código así como la posible documentación sobre el mismo.
 
-### Requirements
+1. Define un post personalizado llamado Perro.
+2. Crear un plugin que cree un post personalizado llamado Eventos Caninos.
+3. Para ambas tareas, puedes utilizar como propuesta de diseño el mockup adjunto.
+4. Sass como preprocesador.
+5. GULP para la compilación, minificado y optimización de archivos.
 
-`_s` requires the following dependencies:
 
-- [Node.js](https://nodejs.org/)
-- [Composer](https://getcomposer.org/)
+🛠️ Instalación
+---------------
+### Proyecto
 
-### Quick Start
+El sistema de directorios subido a Github es el contenedor de la carpeta local wearecactus/wp-content/themes/wearecactus. Para instalar introduce el contenido dentro de la carpeta del tema wearecactus.
+
+1. Instala wordpress en local añadiendo la consiguración de la db de wp-config copiando el archivo readme.txt del proyecto.
+2. Mueve la carpeta plugins/eventos-caninos-cactus a la carpeta plugins
+3. Mueve la carpeta uploads a wp-content/uploads
+
+### Dependencias - GULP
 
 Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain and replace with: `'megatherium-is-awesome'`.
-2. Search for `_s_` to capture all the functions names and replace with: `megatherium_is_awesome_`.
-3. Search for `Text Domain: _s` in `style.css` and replace with: `Text Domain: megatherium-is-awesome`.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
-5. Search for `_s-` to capture prefixed handles and replace with: `megatherium-is-awesome-`.
-6. Search for `_S_` (in uppercase) to capture constants and replace with: `MEGATHERIUM_IS_AWESOME_`.
+1. Instala las dependencias requeridas por el proyecto con npm install
+2. Compilación del sass con: gulp watch-scss 
 
-Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `_s.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
+![Screenshot](https://github.com/jscoronado/wearecactus/assets/8921318/0cd555a6-e004-4b3b-8179-0b4bdb68af2a)
 
-### Setup
 
-To start using all the tools that come with `_s`  you need to install the necessary Node.js and Composer dependencies :
+🍺 Pregunta
+---------------
+### ¿Qué precauciones tomarías para asegurarte de que tus temas y plugins de WordPress son seguros y protegidos contra ataques comunes?
 
-```sh
-$ composer install
-$ npm install
-```
+1. Mantener el WordPress y los plugins utilizados actualizados.
+2. Usar contraseñas seguras.
+3. Renombrar prefijos de las tablas de la base de datos.
+4. Realiza copias de seguridad regulares.
+5. Utilizar plugins de confianza, conocidos o con valoraciones positivas. A poder ser que tengan un mantenimiento regular.
+6. Descarga temas y plugins desde fuentes confiables.
+7. Según el caso, utilizar plugins de seguridad o recaptcha.
 
-### Available CLI commands
 
-`_s` comes packed with CLI commands tailored for WordPress theme development :
+## ✒️ Autor
 
-- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
-- `composer lint:php` : checks all PHP files for syntax errors.
-- `composer make-pot` : generates a .pot file in the `languages/` directory.
-- `npm run compile:css` : compiles SASS files to css.
-- `npm run compile:rtl` : generates an RTL stylesheet.
-- `npm run watch` : watches all SASS files and recompiles them to css when they change.
-- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
-- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
-- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
-
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
-
-Good luck!
+* **Jose Miguel Coronado Aroca** - *Desarrollo y Diseño web* - [jscoronado](https://github.com/jscoronado)
