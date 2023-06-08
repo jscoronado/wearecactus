@@ -10,22 +10,13 @@
  */
 
 ?>
-
-	<footer id="colophon" class="site-footer">
+	</main>
+	<footer id="footer-cactus" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wearecactus' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'wearecactus' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'wearecactus' ), 'wearecactus', '<a href="http://underscores.me/">Jose M. Coronado</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+		Prueba Técnica We Are Cactus - (PHP – WordPress) 
+		| by <a href="https://www.linkedin.com/in/jmcoronado/" target="_blank">Jose M. Coronado Aroca</a>
+		</div>
+	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

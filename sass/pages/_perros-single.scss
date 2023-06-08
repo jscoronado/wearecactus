@@ -1,0 +1,57 @@
+/* 
+	# Page Perros (Single)
+/*--------------------------------------------------------------*/
+
+article#single-perro {
+   position: relative;
+   width: 100%;
+
+   .single-perro__thumbnail {
+      img {
+         width: 100%;
+         height: auto;
+      }
+   }
+
+   .single-perro__description {
+      position: relative;
+      padding: 60px 20px;
+
+      .single-perro__attributes {
+         position: absolute;
+         left: -40px;
+         bottom: 0;
+
+         ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+               color: white;
+               background: $text;
+               margin-bottom: 15px;
+               padding: 7px 21px;
+               text-align: center;
+
+               &.at-raza {
+                  background-color: $yellow;
+
+                  a {
+                     color: $text;
+                     font-weight: 600;
+                  }
+               }
+            }
+        }
+
+        @include tablet {
+            position: relative;
+            left: 0;
+            margin-top: 30px;
+        }
+     }
+  }
+}

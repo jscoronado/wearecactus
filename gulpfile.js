@@ -13,20 +13,17 @@ const sass = gulpSass( dartSass );
 const SCSS_SRC = 'sass/**/*.scss';
 const SCSS_DST = 'css/';
 
-// browser-sync task for starting the server.
 gulp.task('browser-sync', function() {
-    //watch files
+
     var files = [
     './style.css',
     './js/*.js',
     './*.php'
     ];
 
-    //initialize browsersync
     browserSync.init(files, {
-    //browsersync with a php server
-    proxy: "localhost/wearecactus/",
-    notify: false
+        proxy: "localhost/wearecactus/",
+        notify: false
     });
 });
 
@@ -55,7 +52,7 @@ if (util.env.production) {
 
 /* Compile scss files*/
 gulp.task('scss', () => {
-    return gulp.src([SCSS_SRC])
+    return gulp.src([SCSS_SRC], 'node_modules/bootstrap/dist/css/bootstrap.min.css')
         .pipe(sourcemaps.init())
         .pipe(sass({
           outputStyle: 'compressed'

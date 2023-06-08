@@ -1,15 +1,40 @@
-/* ==|====================
-   Layout/Main
-   ======================= */
+/* 
+	# Main
+/*--------------------------------------------------------------*/
 
-.l-main {
+   main#content-app {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-height: 100vh;
+      margin-top: -70px;
+      padding-top: 160px;
 
-}
+      .site-main {
+         width: 100%;
+      }
 
-.main-head {
+      #home {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         text-align: center;
+      }
+  }
 
-}
+  body.home {
+      main#content-app {
+         background-image: url('/wearecactus/wp-content/uploads/2023/06/back-principal.jpg');
+         background-color: #B0AFAA;
+         background-size: cover;
+         background-position: center;
 
-.main-title {
-
-}
+         @include tablet {
+            background-position: 75%;
+            
+            h1, h2 {
+               color: #ffffff;
+            }
+        }
+      }
+  }

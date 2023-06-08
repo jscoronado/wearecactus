@@ -1,0 +1,97 @@
+<?php
+/*
+* Creating a function to create our CPT
+*/
+  
+/* Creación CPT Perros */
+add_action( 'init', 'create_cpt_perros', 0 );
+function create_cpt_perros() {
+  
+    $labels = array(
+        'name'                => _x( 'Perros', 'Perros', 'wearecactus' ),
+        'singular_name'       => _x( 'Perro', 'Perro', 'wearecactus' ),
+        'menu_name'           => __( 'Perros', 'wearecactus' ),
+        'parent_item_colon'   => __( 'Parent Perro', 'wearecactus' ),
+        'all_items'           => __( 'Todos los Perros', 'wearecactus' ),
+        'view_item'           => __( 'Ver Perro', 'wearecactus' ),
+        'add_new_item'        => __( 'Añadir Nuevo Perro', 'wearecactus' ),
+        'add_new'             => __( 'Añadir Nuevo', 'wearecactus' ),
+        'edit_item'           => __( 'Editar Perro', 'wearecactus' ),
+        'update_item'         => __( 'Actualizar Perro', 'wearecactus' ),
+        'search_items'        => __( 'Buscar Perro', 'wearecactus' ),
+        'not_found'           => __( 'No hay resultados', 'wearecactus' ),
+        'not_found_in_trash'  => __( 'No hay resultados en la papelera', 'wearecactus' ),
+    );
+          
+          
+    $args = array(
+        'label'               => __( 'Perros', 'wearecactus' ),
+        'description'         => __( 'Listado de nuestros perros', 'wearecactus' ),
+        'labels'              => $labels,
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+
+        'taxonomies'          => array( 'cat-perros' ),
+
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'menu_icon'           => 'dashicons-buddicons-activity',
+        'show_in_rest' => true,
+    
+    );
+        
+    register_post_type( 'Perros', $args );
+    
+}     
+
+/* Creación Categorización Razas */
+add_action( 'init', 'create_tax_perros', 0 );  
+function create_tax_perros() {
+    $labels = array(
+        'name'             => _x( 'Razas', 'perros' ),
+        'singular_name'    => _x( 'Raza', 'perros' ),
+        'search_items'     =>  __( 'Buscar por Raza' ),
+        'all_items'        => __( 'Todas las Razas' ),
+        'parent_item'      => __( 'Raza padre' ),
+        'parent_item_colon'=> __( 'Raza padre:' ),
+        'edit_item'        => __( 'Editar Raza' ),
+        'update_item'      => __( 'Actualizar Raza' ),
+        'add_new_item'     => __( 'Añadir nueva Raza' ),
+        'new_item_name'    => __( 'Nombre de la nueva Raza' ),
+    );
+
+    register_taxonomy( 'raza', array( 'perros' ), array(
+        'hierarchical'       => true,
+        'labels'             => $labels,
+        'show_ui'            => true,
+        'query_var'          => true,
+        'show_admin_column'  => true,
+        'rewrite'            => array( 'slug' => 'raza' ),
+    ));
+}
+
+/* 
+add_filter( 'manage_perros_posts_columns','add_perros_columns');
+function add_perros_columns( $columns ) {  
+    $columns['edad_perro'] = 'Edad';
+    $columns['personalidad_perro'] = 'Personalidad';
+    return $columns;
+}
+
+add_action( 'manage_perros_posts_custom_column','fill_perros_custom_column');
+function fill_perros_custom_column( $column_id, $post_id ) {
+    switch( $column_id ) { 
+        case 'edad_perro': get_field('edad_perro', $post_id);
+        case 'personalidad_perro': get_field('personalidad_perro', $post_id);
+        break;
+   }
+}*/

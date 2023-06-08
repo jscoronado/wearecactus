@@ -1,6 +1,135 @@
-/* ==|====================
-   Layout/Nav
-   ======================= */
+/* 
+	# Main
+/*--------------------------------------------------------------*/
 
-.l-nav {
+.nav {
+   $width: 100vw;
+   $height: 100vh;
+   $font--size--calc: calc(2vw + 10px);
+   $transition--easing: cubic-bezier(.77,0,.175,1);
+   position: fixed;
+   z-index:1;
+   pointer-events: none;
+   &:before,&:after {
+      content: "";
+      position: fixed;
+      width:$width;
+      height:$height;
+      background: $grey;
+      z-index: -1;
+      transition: transform $transition--easing $transition--length + s;
+      transform: translateX(0%) translateY(-100%);
+   }
+   &:after {
+      background: $background--color;
+      transition-delay: 0s;
+   }
+   &:before {
+      transition-delay: .1s;
+   }
+   &__content {
+      position: fixed;
+      top:50%;
+      transform: translate(0%,-50%);
+      width: 100%;
+         text-align: center;
+      font-size: $font--size--calc;
+      font-weight: 200;
+      cursor: pointer;
+
+      @include tablet {
+         ul {
+            display: flex;
+            flex-direction: column;
+
+            .nav__list-item {
+               margin-bottom: 30px;
+
+               a {
+                  font-size: 40px;
+                  line-height: 50px;
+               }
+            }
+         }
+      }
+
+   }
+   &__list-item {
+      position: relative;
+      display: inline-block;
+      transition-delay: $transition--length + s;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(0%, 100%);
+      transition: opacity .2s ease, transform .3s ease;
+      margin-right: 25px;
+      padding: 0 10px;
+      &:before {
+         content: "";
+         position: absolute;
+         background: $yellow;
+         width: 0;
+         height: 100%;
+         top: 0;
+         left: 0;
+         transform: translate(0%, 0%);
+         transition: all .3s ease;
+         z-index: -1;
+      }
+      &:hover {
+         &:before{
+            width: 100%;
+         }
+         a {
+            color: $grey;
+            transition: all .3s ease;
+         }
+      }
+
+      a {
+         color: white;
+         text-decoration: none;
+         transition: all .3s ease;
+      }
+   }
+}
+
+body.nav-active {
+   $menu--items--count: 4;
+   .menu-icon {
+      &__line {
+         transform: translateX(0px) rotate(-45deg);
+      }
+      &__line-left {
+         transform: translateX(1px) rotate(45deg);
+      }
+      &__line-right {
+         transform: translateX(-2px) rotate(45deg);
+      }
+   }
+   .nav{
+      visibility:visible;
+      pointer-events: all;
+      &:before,&:after {
+         transform: translateX(0%) translateY(0%);
+      }
+      &:after {
+         transition-delay: .1s;
+      }
+      &:before {
+         transition-delay: 0s;
+         background: $yellow;
+      }
+      &__list-item {
+         opacity: 1;
+         pointer-events: all;
+         transform: translateX(0%);
+         transition: opacity .3s ease, transform .3s ease, color .3s ease;
+         @for $i from 0 through $menu--items--count {
+            &:nth-child(#{$i}) {
+               transition-delay: calc($transition--length * $i / 8 + .5) + s;
+            }
+         }
+      }
+   }
 }
