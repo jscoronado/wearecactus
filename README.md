@@ -26,7 +26,7 @@ El sistema de directorios subido a Github es el contenedor de la carpeta local w
 
 ### Dependencias - GULP
 
-Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
+
 
 1. Instala las dependencias requeridas por el proyecto con npm install
 2. Compilación del sass con: gulp watch-scss 
