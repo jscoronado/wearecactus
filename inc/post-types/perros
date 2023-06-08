@@ -44,6 +44,7 @@ function create_cpt_perros() {
         'exclude_from_search' => false,
         'publicly_queryable'  => true,
         'capability_type'     => 'post',
+        'menu_icon'           => 'dashicons-buddicons-activity',
         'show_in_rest' => true,
     
     );

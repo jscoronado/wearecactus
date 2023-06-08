@@ -38,3 +38,12 @@ ul.pagination {
     transition: all 0.2s ease-in-out;
   }
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
