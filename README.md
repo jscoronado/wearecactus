@@ -21,12 +21,11 @@ La prueba técnica consistirá en generar un proyecto Wordpress limpio, siguiend
 El sistema de directorios subido a Github es el contenedor de la carpeta local wearecactus/wp-content/themes/wearecactus. Para instalar introduce el contenido dentro de la carpeta del tema wearecactus.
 
 1. Instala wordpress en local añadiendo la consiguración de la db de wp-config copiando el archivo readme.txt del proyecto.
-2. Mueve la carpeta plugins/eventos-caninos-cactus a la carpeta plugins
-3. Mueve la carpeta uploads a wp-content/uploads
+2. Importa la base de datos almacenada en raiz (wearecactus_db.sql)
+3. Mueve la carpeta plugins/eventos-caninos-cactus a la carpeta plugins
+4. Mueve la carpeta uploads a wp-content/uploads
 
 ### Dependencias - GULP
-
-
 
 1. Instala las dependencias requeridas por el proyecto con npm install
 2. Compilación del sass con: gulp watch-scss 
